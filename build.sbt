@@ -1,5 +1,6 @@
 name := "Xtract"
 
+
 def versionedScalacOptions(scalaVersion: String) = {
   Seq(
     "-deprecation",
@@ -22,7 +23,11 @@ inThisBuild(Seq(
   homepage := Some(url("https://github.com/lucidsoftware/xtract")),
   organization := "com.lucidchart",
   scmInfo := Some(ScmInfo(url("https://github.com/lucidsoftware/xtract"), "scm:git:git@github.com:lucidsoftware/xtract.git")),
-  version := sys.props.getOrElse("build.version", "0-SNAPSHOT"),
+  // version := sys.props.getOrElse("build.version", "0-SNAPSHOT"),
+
+  scalaVersion := "2.12.10",
+  version := "2.2.2-SNAPSHOT",
+
   publishMavenStyle := true,
   scalacOptions ++= versionedScalacOptions(scalaVersion.value),
   sonatypeSessionName := s"[sbt-sonatype] xtract-${scalaBinaryVersion.value}-${version.value}",
